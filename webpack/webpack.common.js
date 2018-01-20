@@ -104,6 +104,12 @@ module.exports = (options) => ({
             template: './src/main/webapp/index.html',
             chunksSortMode: 'dependency',
             inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'ngx-admin.html',
+            template: './src/main/webapp/app/ngx-admin/index.html',
+            chunksSortMode: 'dependency',
+            inject: 'body'
         })
     ]
 });
