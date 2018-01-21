@@ -2,6 +2,16 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Entities',
+    icon: 'nb-cloudy',
+    children: [
+      {
+        title: 'Source Db Conn',
+        link: '/pages/entities/source-db-connection-bilge',
+      }
+    ],
+  },
+  {
     title: 'Dashboard',
     icon: 'nb-home',
     link: '/pages/dashboard',

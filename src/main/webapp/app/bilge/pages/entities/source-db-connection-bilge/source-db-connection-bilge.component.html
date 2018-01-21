@@ -1,0 +1,66 @@
+<div>
+    <h2>
+        <span jhiTranslate="bilgeApp.sourceDbConnection.home.title">Source Db Connections</span>
+        <button class="btn btn-primary float-right jh-create-entity create-source-db-connection-bilge" [routerLink]="['/', { outlets: { popup: ['source-db-connection-bilge-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="bilgeApp.sourceDbConnection.home.createLabel">
+            Create new Source Db Connection
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sourceDbConnections">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="bilgeApp.sourceDbConnection.name">Name</span></th>
+            <th><span jhiTranslate="bilgeApp.sourceDbConnection.url">Url</span></th>
+            <th><span jhiTranslate="bilgeApp.sourceDbConnection.user">User</span></th>
+            <th><span jhiTranslate="bilgeApp.sourceDbConnection.pass">Pass</span></th>
+            <th><span jhiTranslate="bilgeApp.sourceDbConnection.dbType">Db Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sourceDbConnection of sourceDbConnections ;trackBy: trackId">
+                <td><a [routerLink]="['../source-db-connection-bilge', sourceDbConnection.id ]">{{sourceDbConnection.id}}</a></td>
+                <td>{{sourceDbConnection.name}}</td>
+                <td>{{sourceDbConnection.url}}</td>
+                <td>{{sourceDbConnection.user}}</td>
+                <td>{{sourceDbConnection.pass}}</td>
+                <td>{{sourceDbConnection.dbType}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../source-db-connection-bilge', sourceDbConnection.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'source-db-connection-bilge/'+ sourceDbConnection.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'source-db-connection-bilge/'+ sourceDbConnection.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
