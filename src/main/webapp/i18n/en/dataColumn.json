@@ -1,0 +1,29 @@
+{
+    "bilgeApp": {
+        "dataColumn" : {
+            "home": {
+                "title": "Data Columns",
+                "createLabel": "Create a new Data Column",
+                "createOrEditLabel": "Create or edit a Data Column"
+            },
+            "created": "A new Data Column is created with identifier {{ param }}",
+            "updated": "A Data Column is updated with identifier {{ param }}",
+            "deleted": "A Data Column is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Data Column {{ id }}?"
+            },
+            "detail": {
+                "title": "Data Column"
+            },
+            "name": "Name",
+            "type": "Type",
+            "size": "Size",
+            "nullable": "Nullable",
+            "remarks": "Remarks",
+            "nativeType": "Native Type",
+            "indexed": "Indexed",
+            "primaryKey": "Primary Key",
+            "table": "Table"
+        }
+    }
+}

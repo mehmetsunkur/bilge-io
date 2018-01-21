@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "dataContexts",
+            "otherEntityName": "dataContext",
+            "otherEntityRelationshipName": "sourceConnection"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pass",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dbType",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180121115755",
+    "entityTableName": "source_db_connection",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "bilge"
+}

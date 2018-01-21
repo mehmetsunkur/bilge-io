@@ -1,0 +1,24 @@
+{
+    "bilgeApp": {
+        "dataSchema" : {
+            "home": {
+                "title": "Data Schemas",
+                "createLabel": "Create a new Data Schema",
+                "createOrEditLabel": "Create or edit a Data Schema"
+            },
+            "created": "A new Data Schema is created with identifier {{ param }}",
+            "updated": "A Data Schema is updated with identifier {{ param }}",
+            "deleted": "A Data Schema is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Data Schema {{ id }}?"
+            },
+            "detail": {
+                "title": "Data Schema"
+            },
+            "name": "Name",
+            "tableCount": "Table Count",
+            "tables": "Tables",
+            "dataContext": "Data Context"
+        }
+    }
+}

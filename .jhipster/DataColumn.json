@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "table",
+            "otherEntityName": "dataTable",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "ColumnType",
+            "fieldValues": "CHAR,VARCHAR,LONGVARCHAR,CLOB,NCHAR,NVARCHAR,LONGNVARCHAR,NCLOB,TINYINT,SMALLINT,INTEGER,BIGINT,FLOAT,REAL,DOUBLE,NUMERIC,DECIMAL,UUID,DATE,TIME,TIMESTAMP,BIT,BOOLEAN,BINARY,VARBINARY,LONGVARBINARY,BLOB,NULL,OTHER,JAVA_OBJECT,DISTINCT,STRUCT,ARRAY,REF,DATALINK,ROWID,SQLXML,INET,LIST,MAP,SET,STRING,NUMBER"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nullable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nativeType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "indexed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "primaryKey",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180121115759",
+    "entityTableName": "data_column",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "bilge"
+}

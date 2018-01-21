@@ -1,0 +1,26 @@
+{
+    "bilgeApp": {
+        "sourceDbConnection" : {
+            "home": {
+                "title": "Source Db Connections",
+                "createLabel": "Create a new Source Db Connection",
+                "createOrEditLabel": "Create or edit a Source Db Connection"
+            },
+            "created": "A new Source Db Connection is created with identifier {{ param }}",
+            "updated": "A Source Db Connection is updated with identifier {{ param }}",
+            "deleted": "A Source Db Connection is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Source Db Connection {{ id }}?"
+            },
+            "detail": {
+                "title": "Source Db Connection"
+            },
+            "name": "Name",
+            "url": "Url",
+            "user": "User",
+            "pass": "Pass",
+            "dbType": "Db Type",
+            "dataContexts": "Data Contexts"
+        }
+    }
+}

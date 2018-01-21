@@ -29,6 +29,36 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="source-db-connection-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.sourceDbConnectionBilge">Source Db Connection Bilge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="data-context-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.dataContextBilge">Data Context Bilge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="data-schema-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.dataSchemaBilge">Data Schema Bilge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="data-table-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.dataTableBilge">Data Table Bilge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="data-column-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.dataColumnBilge">Data Column Bilge</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

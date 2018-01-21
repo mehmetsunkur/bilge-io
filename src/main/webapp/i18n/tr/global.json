@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Varlıklar",
+                "sourceDbConnectionBilge": "Source Db Connection",
+                "dataContextBilge": "Data Context",
+                "dataSchemaBilge": "Data Schema",
+                "dataTableBilge": "Data Table",
+                "dataColumnBilge": "Data Column",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

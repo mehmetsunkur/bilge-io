@@ -1,0 +1,32 @@
+
+<div *ngIf="dataContext">
+    <h2><span jhiTranslate="bilgeApp.dataContext.detail.title">Data Context</span> {{dataContext.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.dataContext.name">Name</span></dt>
+        <dd>
+            <span>{{dataContext.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataContext.sourceConnection">Source Connection</span></dt>
+        <dd>
+            <div *ngIf="dataContext.sourceConnectionId">
+                <a [routerLink]="['/source-db-connection-bilge', dataContext.sourceConnectionId]">{{dataContext.sourceConnectionName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'data-context-bilge/'+ dataContext.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

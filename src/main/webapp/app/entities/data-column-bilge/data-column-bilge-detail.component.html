@@ -1,0 +1,60 @@
+
+<div *ngIf="dataColumn">
+    <h2><span jhiTranslate="bilgeApp.dataColumn.detail.title">Data Column</span> {{dataColumn.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.dataColumn.name">Name</span></dt>
+        <dd>
+            <span>{{dataColumn.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'bilgeApp.ColumnType.' + dataColumn.type}}">{{dataColumn.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.size">Size</span></dt>
+        <dd>
+            <span>{{dataColumn.size}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.nullable">Nullable</span></dt>
+        <dd>
+            <span>{{dataColumn.nullable}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.remarks">Remarks</span></dt>
+        <dd>
+            <span>{{dataColumn.remarks}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.nativeType">Native Type</span></dt>
+        <dd>
+            <span>{{dataColumn.nativeType}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.indexed">Indexed</span></dt>
+        <dd>
+            <span>{{dataColumn.indexed}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.primaryKey">Primary Key</span></dt>
+        <dd>
+            <span>{{dataColumn.primaryKey}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataColumn.table">Table</span></dt>
+        <dd>
+            <div *ngIf="dataColumn.tableId">
+                <a [routerLink]="['/data-table-bilge', dataColumn.tableId]">{{dataColumn.tableName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'data-column-bilge/'+ dataColumn.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

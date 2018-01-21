@@ -1,0 +1,62 @@
+
+entity SourceDbConnection {
+	name String,
+    url String,
+    user String,
+    pass String,
+    dbType String,
+}
+
+relationship OneToMany {
+	SourceDbConnection {dataContexts(name)} to DataContext {sourceConnection(name)}
+}
+
+entity DataContext {
+	name String
+}
+relationship OneToMany {
+	DataContext {schemas(name)} to DataSchema {dataContext(name)}
+}
+
+entity DataSchema {
+	name String,
+    tableCount Long,
+}
+relationship OneToMany {
+	DataSchema {tables(name)} to DataTable {schema(name)}
+}
+entity DataTable {
+	name String,
+    columnCount Long,
+}
+
+entity DataColumn {
+	name String,
+    type ColumnType,
+    size Long,
+    nullable Boolean,
+    remarks String,
+    nativeType String,
+    indexed Boolean,
+    primaryKey Boolean
+}
+
+relationship OneToMany {
+	DataTable {columns(name)} to DataColumn {table(name)}
+}
+
+enum ColumnType {
+	CHAR,VARCHAR,LONGVARCHAR,CLOB,NCHAR,NVARCHAR,LONGNVARCHAR,NCLOB,
+    TINYINT,SMALLINT,INTEGER,BIGINT,FLOAT,REAL,DOUBLE,NUMERIC,DECIMAL,UUID,
+    DATE,TIME,TIMESTAMP,BIT,BOOLEAN,
+    BINARY,VARBINARY,LONGVARBINARY,BLOB,
+    NULL,OTHER,JAVA_OBJECT,DISTINCT,STRUCT,ARRAY,REF,DATALINK,ROWID,SQLXML,INET,
+    LIST,MAP,SET,STRING,NUMBER
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job, DataColumn
+// Set an angular suffix
+angularSuffix * with bilge

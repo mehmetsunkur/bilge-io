@@ -1,0 +1,23 @@
+{
+    "bilgeApp": {
+        "dataContext" : {
+            "home": {
+                "title": "Data Contexts",
+                "createLabel": "Create a new Data Context",
+                "createOrEditLabel": "Create or edit a Data Context"
+            },
+            "created": "A new Data Context is created with identifier {{ param }}",
+            "updated": "A Data Context is updated with identifier {{ param }}",
+            "deleted": "A Data Context is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Data Context {{ id }}?"
+            },
+            "detail": {
+                "title": "Data Context"
+            },
+            "name": "Name",
+            "schemas": "Schemas",
+            "sourceConnection": "Source Connection"
+        }
+    }
+}

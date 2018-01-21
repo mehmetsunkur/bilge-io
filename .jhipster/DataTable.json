@@ -1,0 +1,34 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "columns",
+            "otherEntityName": "dataColumn",
+            "otherEntityRelationshipName": "table"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "schema",
+            "otherEntityName": "dataSchema",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "columnCount",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180121115758",
+    "entityTableName": "data_table",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "bilge"
+}

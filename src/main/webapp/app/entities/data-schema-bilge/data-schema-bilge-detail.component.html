@@ -1,0 +1,36 @@
+
+<div *ngIf="dataSchema">
+    <h2><span jhiTranslate="bilgeApp.dataSchema.detail.title">Data Schema</span> {{dataSchema.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.dataSchema.name">Name</span></dt>
+        <dd>
+            <span>{{dataSchema.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataSchema.tableCount">Table Count</span></dt>
+        <dd>
+            <span>{{dataSchema.tableCount}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.dataSchema.dataContext">Data Context</span></dt>
+        <dd>
+            <div *ngIf="dataSchema.dataContextId">
+                <a [routerLink]="['/data-context-bilge', dataSchema.dataContextId]">{{dataSchema.dataContextName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'data-schema-bilge/'+ dataSchema.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
