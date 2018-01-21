@@ -32,5 +32,5 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })
-export class NgxAdminAppModule {
+export class BilgeAdminAppModule {
 }

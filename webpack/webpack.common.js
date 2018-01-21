@@ -103,13 +103,20 @@ module.exports = (options) => ({
             }
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/webapp/index.html',
+            filename: 'index.html',
+            template: './src/main/webapp/app/bilge/index.html',
             chunksSortMode: 'dependency',
             inject: 'body'
         }),
         new HtmlWebpackPlugin({
             filename: 'ngx-admin.html',
             template: './src/main/webapp/app/ngx-admin/index.html',
+            chunksSortMode: 'dependency',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'jhipster.html',
+            template: './src/main/webapp/index.html',
             chunksSortMode: 'dependency',
             inject: 'body'
         })
