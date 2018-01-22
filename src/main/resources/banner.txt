@@ -1,10 +1,9 @@
+  ${AnsiColor.BRIGHT_BLUE}██████╗  ${AnsiColor.RED}██╗ ██╗       ██████╗  ███████╗
+  ${AnsiColor.BRIGHT_BLUE}██╔══██╗ ${AnsiColor.RED}██║ ██║      ██╔════╝  ██╔════╝
+  ${AnsiColor.BRIGHT_BLUE}██████╔╝ ${AnsiColor.RED}██║ ██║      ██║  ███╗ █████╗  
+  ${AnsiColor.BRIGHT_BLUE}██╔══██╗ ${AnsiColor.RED}██║ ██║      ██║   ██║ ██╔══╝  
+  ${AnsiColor.BRIGHT_BLUE}██████╔╝ ${AnsiColor.RED}██║ ███████╗ ╚██████╔╝ ███████╗
+  ${AnsiColor.BRIGHT_BLUE}╚═════╝  ${AnsiColor.RED}╚═╝ ╚══════╝  ╚═════╝  ╚══════╝
 
-  ${AnsiColor.GREEN}      ██╗${AnsiColor.RED} ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
-  ${AnsiColor.GREEN}      ██║${AnsiColor.RED} ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗
-  ${AnsiColor.GREEN}      ██║${AnsiColor.RED} ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝
-  ${AnsiColor.GREEN}██╗   ██║${AnsiColor.RED} ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║
-  ${AnsiColor.GREEN}╚██████╔╝${AnsiColor.RED} ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗
-  ${AnsiColor.GREEN} ╚═════╝ ${AnsiColor.RED} ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝
-
-${AnsiColor.BRIGHT_BLUE}:: JHipster 🤓  :: Running Spring Boot ${spring-boot.version} ::
+${AnsiColor.BRIGHT_BLUE}:: Bilge 🤓  :: Running Spring Boot ${spring-boot.version} ::
 :: http://www.jhipster.tech ::${AnsiColor.DEFAULT}
