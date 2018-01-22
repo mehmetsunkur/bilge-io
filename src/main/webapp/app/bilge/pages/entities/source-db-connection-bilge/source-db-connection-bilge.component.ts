@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
-import { SourceDbConnectionBilge } from './source-db-connection-bilge.model';
-import { SourceDbConnectionBilgeService } from './source-db-connection-bilge.service';
-import { Principal, ResponseWrapper } from '../../../../shared';
+import { SourceDbConnectionBilge, BilgeSourceDbConnectionBilgeService } from '.';
+import { ITEMS_PER_PAGE, Principal, ResponseWrapper } from '../../../../shared';
+import { SourceDbConnectionBilgePopupService, SourceDbConnectionBilgeDeleteDialogComponent, SourceDbConnectionBilgeDialogComponent } from './index';
 
 @Component({
     selector: 'jhi-source-db-connection-bilge',
@@ -16,10 +17,11 @@ sourceDbConnections: SourceDbConnectionBilge[];
     eventSubscriber: Subscription;
 
     constructor(
-        private sourceDbConnectionService: SourceDbConnectionBilgeService,
+        private sourceDbConnectionService: BilgeSourceDbConnectionBilgeService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private principal: Principal
+        private principal: Principal,
+        private sourceDbConnectionPopupService: SourceDbConnectionBilgePopupService
     ) {
     }
 
@@ -37,6 +39,19 @@ sourceDbConnections: SourceDbConnectionBilge[];
             this.currentAccount = account;
         });
         this.registerChangeInSourceDbConnections();
+    }
+
+    delete(sourceDbConnection: SourceDbConnectionBilge) {
+        this.sourceDbConnectionPopupService
+        .open(SourceDbConnectionBilgeDeleteDialogComponent as Component, sourceDbConnection.id);
+    }
+    edit(sourceDbConnection: SourceDbConnectionBilge) {
+        this.sourceDbConnectionPopupService
+        .open(SourceDbConnectionBilgeDialogComponent as Component, sourceDbConnection.id);
+    }
+    newSourceDbConnection(){
+        this.sourceDbConnectionPopupService
+        .open(SourceDbConnectionBilgeDialogComponent as Component);
     }
 
     ngOnDestroy() {

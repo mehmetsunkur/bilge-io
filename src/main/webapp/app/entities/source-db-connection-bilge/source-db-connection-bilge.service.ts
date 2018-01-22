@@ -11,7 +11,7 @@ export class SourceDbConnectionBilgeService {
 
     private resourceUrl =  SERVER_API_URL + 'api/source-db-connections';
 
-    constructor(private http: Http) { }
+    constructor(protected http: Http) { }
 
     create(sourceDbConnection: SourceDbConnectionBilge): Observable<SourceDbConnectionBilge> {
         const copy = this.convert(sourceDbConnection);
@@ -46,7 +46,7 @@ export class SourceDbConnectionBilgeService {
         return this.http.delete(`${this.resourceUrl}/${id}`);
     }
 
-    private convertResponse(res: Response): ResponseWrapper {
+    protected convertResponse(res: Response): ResponseWrapper {
         const jsonResponse = res.json();
         const result = [];
         for (let i = 0; i < jsonResponse.length; i++) {

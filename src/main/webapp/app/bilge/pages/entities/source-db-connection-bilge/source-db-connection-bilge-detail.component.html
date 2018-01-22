@@ -32,11 +32,90 @@
         <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
-    <button type="button"
-            [routerLink]="['/', { outlets: { popup: 'source-db-connection-bilge/'+ sourceDbConnection.id + '/edit'} }]"
-            replaceUrl="true"
-            queryParamsHandling="merge"
+    <button (click)="edit(sourceDbConnection)"
             class="btn btn-primary">
         <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
+    <button (click)="listSchemas(sourceDbConnection)"
+        class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="bilgeApp.sourceDbConnection.detail.listSchemasButtonLabel">Schemas</span>
+    </button>
+
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="dataSchemas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="bilgeApp.Datasc.name">Schema</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dataSchema of dataSchemas ;trackBy: trackId">
+                <td>{{dataSchema.name}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button (click)="listTables(sourceDbConnection, dataSchema)" class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Tables</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tables">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="bilgeApp.Datasc.name">Schema</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let table of tables ;trackBy: trackId">
+                <td>{{table.name}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button (click)="listColumns(sourceDbConnection, table)" class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Columns</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="columns">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>Name</span></th>
+            <th><span>Type</span></th>
+            <th><span>Size</span></th>
+            <th><span>is Primary Key</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let column of columns ;trackBy: trackId">
+                <td>{{column.name}}</td>
+                <td>{{column.nativeType}}</td>
+                <td>{{column.size}}</td>
+                <td>{{column.primaryKey}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

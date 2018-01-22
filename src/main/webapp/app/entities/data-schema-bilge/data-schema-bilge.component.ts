@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/observable/throw';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { DataSchemaBilge } from './data-schema-bilge.model';

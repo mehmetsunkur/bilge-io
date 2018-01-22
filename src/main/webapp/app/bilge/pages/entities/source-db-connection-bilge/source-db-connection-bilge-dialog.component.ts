@@ -2,13 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Response } from '@angular/http';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiEventManager } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
-import { SourceDbConnectionBilge } from './source-db-connection-bilge.model';
+import { SourceDbConnectionBilge } from '../../../../entities/source-db-connection-bilge';
 import { SourceDbConnectionBilgePopupService } from './source-db-connection-bilge-popup.service';
-import { SourceDbConnectionBilgeService } from './source-db-connection-bilge.service';
+import { BilgeSourceDbConnectionBilgeService } from '.';
+
 
 @Component({
     selector: 'jhi-source-db-connection-bilge-dialog',
@@ -21,7 +22,8 @@ export class SourceDbConnectionBilgeDialogComponent implements OnInit {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private sourceDbConnectionService: SourceDbConnectionBilgeService,
+        private jhiAlertService: JhiAlertService,
+        private sourceDbConnectionService: BilgeSourceDbConnectionBilgeService,
         private eventManager: JhiEventManager
     ) {
     }
@@ -58,6 +60,10 @@ export class SourceDbConnectionBilgeDialogComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
+    }
+
+    private onError(error: any) {
+        this.jhiAlertService.error(error.message, null, null);
     }
 }
 

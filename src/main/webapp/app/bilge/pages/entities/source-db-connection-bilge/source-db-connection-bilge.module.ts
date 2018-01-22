@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { BilgeSharedModule } from '../../../../shared';
 import {
-    SourceDbConnectionBilgeService,
+    BilgeSourceDbConnectionBilgeService,
     SourceDbConnectionBilgePopupService,
     SourceDbConnectionBilgeComponent,
     SourceDbConnectionBilgeDetailComponent,
@@ -12,18 +12,16 @@ import {
     SourceDbConnectionBilgeDeletePopupComponent,
     SourceDbConnectionBilgeDeleteDialogComponent,
     sourceDbConnectionRoute,
-    sourceDbConnectionPopupRoute,
 } from './';
 
 const ENTITY_STATES = [
     ...sourceDbConnectionRoute,
-    ...sourceDbConnectionPopupRoute,
 ];
 
 @NgModule({
     imports: [
         BilgeSharedModule,
-        RouterModule.forChild(ENTITY_STATES)
+        RouterModule.forChild(sourceDbConnectionRoute)
     ],
     declarations: [
         SourceDbConnectionBilgeComponent,
@@ -41,7 +39,7 @@ const ENTITY_STATES = [
         SourceDbConnectionBilgeDeletePopupComponent,
     ],
     providers: [
-        SourceDbConnectionBilgeService,
+        BilgeSourceDbConnectionBilgeService,
         SourceDbConnectionBilgePopupService,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

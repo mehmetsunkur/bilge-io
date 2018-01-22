@@ -1,8 +1,8 @@
 import { Injectable, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { SourceDbConnectionBilge } from './source-db-connection-bilge.model';
-import { SourceDbConnectionBilgeService } from './source-db-connection-bilge.service';
+import { SourceDbConnectionBilge } from '../../../../entities/source-db-connection-bilge';
+import { BilgeSourceDbConnectionBilgeService } from '.';
 
 @Injectable()
 export class SourceDbConnectionBilgePopupService {
@@ -11,7 +11,7 @@ export class SourceDbConnectionBilgePopupService {
     constructor(
         private modalService: NgbModal,
         private router: Router,
-        private sourceDbConnectionService: SourceDbConnectionBilgeService
+        private sourceDbConnectionService: BilgeSourceDbConnectionBilgeService
 
     ) {
         this.ngbModalRef = null;
@@ -43,10 +43,10 @@ export class SourceDbConnectionBilgePopupService {
         const modalRef = this.modalService.open(component, { size: 'lg', backdrop: 'static'});
         modalRef.componentInstance.sourceDbConnection = sourceDbConnection;
         modalRef.result.then((result) => {
-            this.router.navigate([{ outlets: { popup: null }}], { replaceUrl: true, queryParamsHandling: 'merge' });
+            this.router.navigate([{ outlets: { popup: null }}], { replaceUrl: true });
             this.ngbModalRef = null;
         }, (reason) => {
-            this.router.navigate([{ outlets: { popup: null }}], { replaceUrl: true, queryParamsHandling: 'merge' });
+            this.router.navigate([{ outlets: { popup: null }}], { replaceUrl: true });
             this.ngbModalRef = null;
         });
         return modalRef;

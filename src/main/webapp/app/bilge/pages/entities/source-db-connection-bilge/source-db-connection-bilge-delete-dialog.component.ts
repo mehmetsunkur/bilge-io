@@ -4,9 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { SourceDbConnectionBilge } from './source-db-connection-bilge.model';
+import { SourceDbConnectionBilge } from '../../../../entities/source-db-connection-bilge';
 import { SourceDbConnectionBilgePopupService } from './source-db-connection-bilge-popup.service';
-import { SourceDbConnectionBilgeService } from './source-db-connection-bilge.service';
+import { BilgeSourceDbConnectionBilgeService } from '.';
+
 
 @Component({
     selector: 'jhi-source-db-connection-bilge-delete-dialog',
@@ -17,7 +18,7 @@ export class SourceDbConnectionBilgeDeleteDialogComponent {
     sourceDbConnection: SourceDbConnectionBilge;
 
     constructor(
-        private sourceDbConnectionService: SourceDbConnectionBilgeService,
+        private sourceDbConnectionService: BilgeSourceDbConnectionBilgeService,
         public activeModal: NgbActiveModal,
         private eventManager: JhiEventManager
     ) {

@@ -224,6 +224,8 @@ dependencies {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
+    compile 'org.apache.metamodel:MetaModel-full:5.0.0'
+    compile 'com.oracle.jdbc:ojdbc8:12.2.0.1'
 }
 
 task cleanResources(type: Delete) {

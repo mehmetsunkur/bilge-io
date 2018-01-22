@@ -1,0 +1,9 @@
+{
+    "bilgeApp": {
+        "sourceDbConnection" : {
+            "detail": {
+                "listSchemasButtonLabel": "List Schemas"
+            }
+        }
+    }
+}
