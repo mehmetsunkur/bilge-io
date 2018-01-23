@@ -13,6 +13,7 @@ import {
     SourceDbConnectionBilgeDeleteDialogComponent,
     sourceDbConnectionRoute,
 } from './';
+import { MatSlideToggleModule, MatSliderModule, MatButtonModule, MatIcon, MatIconModule } from '@angular/material';
 
 const ENTITY_STATES = [
     ...sourceDbConnectionRoute,
@@ -21,7 +22,11 @@ const ENTITY_STATES = [
 @NgModule({
     imports: [
         BilgeSharedModule,
-        RouterModule.forChild(sourceDbConnectionRoute)
+        RouterModule.forChild(sourceDbConnectionRoute),
+        MatSlideToggleModule,
+        MatSliderModule,
+        MatButtonModule,
+        MatIconModule,
     ],
     declarations: [
         SourceDbConnectionBilgeComponent,
