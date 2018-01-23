@@ -8,6 +8,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Source Db Conn',
         link: '/pages/entities/source-db-connection-bilge',
+      },
+      {
+        title: 'Destination Tables',
+        link: '/pages/entities/spark-destination-table-bilge',
+      },
+      {
+        title: 'Destination Table Columns',
+        link: '/pages/entities/spark-destination-column-bilge',
       }
     ],
   },
