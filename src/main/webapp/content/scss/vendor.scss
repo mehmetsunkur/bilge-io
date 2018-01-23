@@ -26,3 +26,6 @@ $nebular-icons-font-path: '~nebular-icons/fonts';
 //@import "~socicon/css/socicon.css";
 @import "../../app/ngx-admin/@theme/styles/styles.scss";
 @import "/node_modules/pace-js/templates/pace-theme-flash.tmpl.css";
+
+//material theme styles
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
