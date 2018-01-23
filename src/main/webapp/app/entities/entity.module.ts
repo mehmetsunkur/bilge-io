@@ -5,6 +5,8 @@ import { BilgeDataContextBilgeModule } from './data-context-bilge/data-context-b
 import { BilgeDataSchemaBilgeModule } from './data-schema-bilge/data-schema-bilge.module';
 import { BilgeDataTableBilgeModule } from './data-table-bilge/data-table-bilge.module';
 import { BilgeDataColumnBilgeModule } from './data-column-bilge/data-column-bilge.module';
+import { BilgeSparkDestinationTableBilgeModule } from './spark-destination-table-bilge/spark-destination-table-bilge.module';
+import { BilgeSparkDestinationColumnBilgeModule } from './spark-destination-column-bilge/spark-destination-column-bilge.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -14,6 +16,8 @@ import { BilgeDataColumnBilgeModule } from './data-column-bilge/data-column-bilg
         BilgeDataSchemaBilgeModule,
         BilgeDataTableBilgeModule,
         BilgeDataColumnBilgeModule,
+        BilgeSparkDestinationTableBilgeModule,
+        BilgeSparkDestinationColumnBilgeModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

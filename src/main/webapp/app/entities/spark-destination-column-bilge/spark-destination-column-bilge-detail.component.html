@@ -1,0 +1,40 @@
+
+<div *ngIf="sparkDestinationColumn">
+    <h2><span jhiTranslate="bilgeApp.sparkDestinationColumn.detail.title">Spark Destination Column</span> {{sparkDestinationColumn.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.sparkDestinationColumn.name">Name</span></dt>
+        <dd>
+            <span>{{sparkDestinationColumn.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDestinationColumn.type">Type</span></dt>
+        <dd>
+            <span>{{sparkDestinationColumn.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDestinationColumn.desc">Desc</span></dt>
+        <dd>
+            <span>{{sparkDestinationColumn.desc}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDestinationColumn.parentTable">Parent Table</span></dt>
+        <dd>
+            <div *ngIf="sparkDestinationColumn.parentTableId">
+                <a [routerLink]="['/spark-destination-table-bilge', sparkDestinationColumn.parentTableId]">{{sparkDestinationColumn.parentTableName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'spark-destination-column-bilge/'+ sparkDestinationColumn.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

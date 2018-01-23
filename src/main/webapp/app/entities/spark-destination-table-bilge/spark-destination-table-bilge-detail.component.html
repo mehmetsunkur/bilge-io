@@ -1,0 +1,30 @@
+
+<div *ngIf="sparkDestinationTable">
+    <h2><span jhiTranslate="bilgeApp.sparkDestinationTable.detail.title">Spark Destination Table</span> {{sparkDestinationTable.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.sparkDestinationTable.name">Name</span></dt>
+        <dd>
+            <span>{{sparkDestinationTable.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDestinationTable.desc">Desc</span></dt>
+        <dd>
+            <span>{{sparkDestinationTable.desc}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'spark-destination-table-bilge/'+ sparkDestinationTable.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
