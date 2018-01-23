@@ -3,15 +3,16 @@ import { Subscription } from 'rxjs/Subscription';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { SparkDestinationTableBilge } from './spark-destination-table-bilge.model';
-import { SparkDestinationTableBilgeService } from './spark-destination-table-bilge.service';
+import { SparkDestinationTableBilgeService, SparkDestinationTableBilgeDialogComponent, SparkDestinationTableBilgePopupService, SparkDestinationTableBilgeDeleteDialogComponent } from './';
 import { Principal, ResponseWrapper } from '../../../../shared';
+import { SourceDbConnectionBilge } from 'src/main/webapp/app/bilge/pages/entities/source-db-connection-bilge';
 
 @Component({
     selector: 'jhi-spark-destination-table-bilge',
     templateUrl: './spark-destination-table-bilge.component.html'
 })
 export class SparkDestinationTableBilgeComponent implements OnInit, OnDestroy {
-sparkDestinationTables: SparkDestinationTableBilge[];
+    sparkDestinationTables: SparkDestinationTableBilge[];
     currentAccount: any;
     eventSubscriber: Subscription;
 
@@ -19,7 +20,8 @@ sparkDestinationTables: SparkDestinationTableBilge[];
         private sparkDestinationTableService: SparkDestinationTableBilgeService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private principal: Principal
+        private principal: Principal,
+        private sparkDestinationTableBilgePopupService: SparkDestinationTableBilgePopupService
     ) {
     }
 
@@ -48,6 +50,21 @@ sparkDestinationTables: SparkDestinationTableBilge[];
     }
     registerChangeInSparkDestinationTables() {
         this.eventSubscriber = this.eventManager.subscribe('sparkDestinationTableListModification', (response) => this.loadAll());
+    }
+
+    newDestinationTable(){
+        this.sparkDestinationTableBilgePopupService
+        .open(SparkDestinationTableBilgeDialogComponent as Component);
+    }
+
+    delete(sparkDestinationTableBilge: SparkDestinationTableBilge){
+        this.sparkDestinationTableBilgePopupService
+        .open(SparkDestinationTableBilgeDeleteDialogComponent as Component, sparkDestinationTableBilge.id)
+    }
+
+    edit(sparkDestinationTableBilge: SparkDestinationTableBilge){
+        this.sparkDestinationTableBilgePopupService
+        .open(SparkDestinationTableBilgeDialogComponent as Component, sparkDestinationTableBilge.id)
     }
 
     private onError(error) {

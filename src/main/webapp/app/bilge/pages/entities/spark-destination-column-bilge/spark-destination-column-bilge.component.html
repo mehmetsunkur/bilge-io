@@ -1,7 +1,8 @@
 <div>
     <h2>
         <span jhiTranslate="bilgeApp.sparkDestinationColumn.home.title">Spark Destination Columns</span>
-        <button class="btn btn-primary float-right jh-create-entity create-spark-destination-column-bilge" [routerLink]="['/', { outlets: { popup: ['spark-destination-column-bilge-new'] } }]">
+        <button class="btn btn-primary float-right jh-create-entity create-spark-destination-column-bilge"
+        (click)="newDestinationColumn()">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="bilgeApp.sparkDestinationColumn.home.createLabel">
             Create new Spark Destination Column

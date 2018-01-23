@@ -11,13 +11,11 @@ import {
     SparkDestinationTableBilgePopupComponent,
     SparkDestinationTableBilgeDeletePopupComponent,
     SparkDestinationTableBilgeDeleteDialogComponent,
-    sparkDestinationTableRoute,
-    sparkDestinationTablePopupRoute,
+    sparkDestinationTableRoute
 } from './';
 
 const ENTITY_STATES = [
-    ...sparkDestinationTableRoute,
-    ...sparkDestinationTablePopupRoute,
+    ...sparkDestinationTableRoute
 ];
 
 @NgModule({

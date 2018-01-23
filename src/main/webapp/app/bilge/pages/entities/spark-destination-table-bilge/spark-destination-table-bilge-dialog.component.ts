@@ -7,7 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { SparkDestinationTableBilge } from './spark-destination-table-bilge.model';
-import { SparkDestinationTableBilgePopupService } from './spark-destination-table-bilge-popup.service';
+import { SparkDestinationTableBilgePopupService } from './';
 import { SparkDestinationTableBilgeService } from './spark-destination-table-bilge.service';
 
 @Component({

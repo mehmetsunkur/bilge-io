@@ -5,13 +5,14 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { SparkDestinationColumnBilge } from './spark-destination-column-bilge.model';
 import { SparkDestinationColumnBilgeService } from './spark-destination-column-bilge.service';
 import { Principal, ResponseWrapper } from '../../../../shared';
+import { SparkDestinationColumnBilgeDialogComponent, SparkDestinationColumnBilgePopupService } from './';
 
 @Component({
     selector: 'jhi-spark-destination-column-bilge',
     templateUrl: './spark-destination-column-bilge.component.html'
 })
 export class SparkDestinationColumnBilgeComponent implements OnInit, OnDestroy {
-sparkDestinationColumns: SparkDestinationColumnBilge[];
+    sparkDestinationColumns: SparkDestinationColumnBilge[];
     currentAccount: any;
     eventSubscriber: Subscription;
 
@@ -19,7 +20,8 @@ sparkDestinationColumns: SparkDestinationColumnBilge[];
         private sparkDestinationColumnService: SparkDestinationColumnBilgeService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private principal: Principal
+        private principal: Principal,
+        private sparkDestinationColumnBilgePopupService: SparkDestinationColumnBilgePopupService
     ) {
     }
 
@@ -48,6 +50,11 @@ sparkDestinationColumns: SparkDestinationColumnBilge[];
     }
     registerChangeInSparkDestinationColumns() {
         this.eventSubscriber = this.eventManager.subscribe('sparkDestinationColumnListModification', (response) => this.loadAll());
+    }
+
+    newDestinationColumn(){
+        this.sparkDestinationColumnBilgePopupService
+        .open(SparkDestinationColumnBilgeDialogComponent as Component);
     }
 
     private onError(error) {

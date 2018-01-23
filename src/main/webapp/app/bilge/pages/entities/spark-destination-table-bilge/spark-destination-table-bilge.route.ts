@@ -25,36 +25,3 @@ export const sparkDestinationTableRoute: Routes = [
         canActivate: [UserRouteAccessService]
     }
 ];
-
-export const sparkDestinationTablePopupRoute: Routes = [
-    {
-        path: 'spark-destination-table-bilge-new',
-        component: SparkDestinationTableBilgePopupComponent,
-        data: {
-            authorities: ['ROLE_USER'],
-            pageTitle: 'bilgeApp.sparkDestinationTable.home.title'
-        },
-        canActivate: [UserRouteAccessService],
-        outlet: 'popup'
-    },
-    {
-        path: 'spark-destination-table-bilge/:id/edit',
-        component: SparkDestinationTableBilgePopupComponent,
-        data: {
-            authorities: ['ROLE_USER'],
-            pageTitle: 'bilgeApp.sparkDestinationTable.home.title'
-        },
-        canActivate: [UserRouteAccessService],
-        outlet: 'popup'
-    },
-    {
-        path: 'spark-destination-table-bilge/:id/delete',
-        component: SparkDestinationTableBilgeDeletePopupComponent,
-        data: {
-            authorities: ['ROLE_USER'],
-            pageTitle: 'bilgeApp.sparkDestinationTable.home.title'
-        },
-        canActivate: [UserRouteAccessService],
-        outlet: 'popup'
-    }
-];

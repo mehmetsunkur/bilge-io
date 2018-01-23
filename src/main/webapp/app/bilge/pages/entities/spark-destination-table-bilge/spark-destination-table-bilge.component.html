@@ -1,7 +1,8 @@
 <div>
     <h2>
         <span jhiTranslate="bilgeApp.sparkDestinationTable.home.title">Spark Destination Tables</span>
-        <button class="btn btn-primary float-right jh-create-entity create-spark-destination-table-bilge" [routerLink]="['/', { outlets: { popup: ['spark-destination-table-bilge-new'] } }]">
+        <button class="btn btn-primary float-right jh-create-entity create-spark-destination-table-bilge" 
+            (click)="newDestinationTable()">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="bilgeApp.sparkDestinationTable.home.createLabel">
             Create new Spark Destination Table
@@ -34,20 +35,12 @@
                                 class="btn btn-info btn-sm">
                             <span class="fa fa-eye"></span>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'spark-destination-table-bilge/'+ sparkDestinationTable.id + '/edit'} }]"
-                                replaceUrl="true"
-                                queryParamsHandling="merge"
-                                class="btn btn-primary btn-sm">
+                        </button>                          
+                        <button (click)="edit(sparkDestinationTable)" class="btn btn-primary btn-sm">
                             <span class="fa fa-pencil"></span>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'spark-destination-table-bilge/'+ sparkDestinationTable.id + '/delete'} }]"
-                                replaceUrl="true"
-                                queryParamsHandling="merge"
-                                class="btn btn-danger btn-sm">
+                        </button>                        
+                        <button (click)="delete(sparkDestinationTable)" class="btn btn-danger btn-sm">
                             <span class="fa fa-remove"></span>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
