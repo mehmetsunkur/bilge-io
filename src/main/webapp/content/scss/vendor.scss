@@ -24,8 +24,8 @@ $ionicons-font-path: '~ionicons/fonts';
 $nebular-icons-font-path: '~nebular-icons/fonts';
 @import "node_modules/nebular-icons/scss/nebular-icons.scss";
 //@import "~socicon/css/socicon.css";
-@import "../../app/ngx-admin/@theme/styles/styles.scss";
-@import "/node_modules/pace-js/templates/pace-theme-flash.tmpl.css";
+@import "../../app/bilge/@theme/styles/styles.scss";
+@import "~pace-js/templates/pace-theme-flash.tmpl.css";
 
 //material theme styles
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
