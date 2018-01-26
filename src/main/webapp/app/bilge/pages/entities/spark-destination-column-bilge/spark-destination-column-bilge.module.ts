@@ -14,6 +14,9 @@ import {
     sparkDestinationColumnRoute,
     sparkDestinationColumnPopupRoute,
 } from './';
+import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 const ENTITY_STATES = [
     ...sparkDestinationColumnRoute,
@@ -23,6 +26,14 @@ const ENTITY_STATES = [
 @NgModule({
     imports: [
         BilgeSharedModule,
+        MatButtonModule,
+        MatStepperModule,
+        MatFormFieldModule,
+        FormsModule, 
+        ReactiveFormsModule,
+        MatFormFieldModule, 
+        MatInputModule, 
+        MatSelectModule,
         RouterModule.forChild(ENTITY_STATES)
     ],
     declarations: [

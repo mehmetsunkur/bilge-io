@@ -17,6 +17,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Destination Table Columns',
         link: '/pages/entities/spark-destination-column-bilge',
       }
+      ,
+      {
+        title: 'Table Mapping',
+        link: '/pages/entities/spark-table-mapping-bilge',
+      }
     ],
   },
   {

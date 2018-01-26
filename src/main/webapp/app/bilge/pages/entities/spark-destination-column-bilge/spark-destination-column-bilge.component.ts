@@ -6,6 +6,7 @@ import { SparkDestinationColumnBilge } from './spark-destination-column-bilge.mo
 import { SparkDestinationColumnBilgeService } from './spark-destination-column-bilge.service';
 import { Principal, ResponseWrapper } from '../../../../shared';
 import { SparkDestinationColumnBilgeDialogComponent, SparkDestinationColumnBilgePopupService } from './';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
     selector: 'jhi-spark-destination-column-bilge',
@@ -15,13 +16,18 @@ export class SparkDestinationColumnBilgeComponent implements OnInit, OnDestroy {
     sparkDestinationColumns: SparkDestinationColumnBilge[];
     currentAccount: any;
     eventSubscriber: Subscription;
+    isLinear = false;
+    zeroFormGroup: FormGroup;
+    firstFormGroup: FormGroup;
+    secondFormGroup: FormGroup;
 
     constructor(
         private sparkDestinationColumnService: SparkDestinationColumnBilgeService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal,
-        private sparkDestinationColumnBilgePopupService: SparkDestinationColumnBilgePopupService
+        private sparkDestinationColumnBilgePopupService: SparkDestinationColumnBilgePopupService,
+        private _formBuilder: FormBuilder
     ) {
     }
 
@@ -34,6 +40,12 @@ export class SparkDestinationColumnBilgeComponent implements OnInit, OnDestroy {
         );
     }
     ngOnInit() {
+        this.firstFormGroup = this._formBuilder.group({
+            firstCtrl: ['', Validators.required]
+          });
+          this.secondFormGroup = this._formBuilder.group({
+            secondCtrl: ['', Validators.required]
+          });
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;

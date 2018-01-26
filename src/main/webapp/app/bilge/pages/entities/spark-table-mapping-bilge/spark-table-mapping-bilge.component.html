@@ -1,0 +1,125 @@
+
+
+<div>
+
+        <button mat-raised-button (click)="isLinear = true" id="toggle-linear">Enable linear mode</button>
+    
+        <mat-horizontal-stepper [linear]="isLinear">
+          <mat-step [stepControl]="zeroFormGroup">
+            <form [formGroup]="zeroFormGroup">
+              <ng-template matStepLabel>Set Destination Table</ng-template>
+              <mat-form-field>
+                 <mat-select placeholder="Hedef tablo" formControlName="destinationTableSelect">
+                    <mat-option *ngFor="let sparkDestinationTable of sparkDestinationTables" [value]="sparkDestinationTable.id">
+                        {{sparkDestinationTable.name}}
+                    </mat-option>
+                 </mat-select>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Set Source DB Connection</ng-template>
+                <mat-form-field>
+                   <mat-select placeholder="Kaynak Veritabanı" formControlName="sourceConSelect">
+                      <mat-option *ngFor="let sourceDbConnection of sourceDbConnections" [value]="sourceDbConnection.id">
+                          {{sourceDbConnection.name}}
+                      </mat-option>
+                   </mat-select>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext (click)="loadSchemas()">Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Set Source Schemas</ng-template>
+                <mat-form-field>
+                   <mat-select placeholder="Kaynak Şema Listesi" formControlName="sourceSchemaSelect">
+                      <mat-option *ngFor="let dataSchema of dataSchemas" [value]="dataSchema.name">
+                          {{dataSchema.name}}
+                      </mat-option>
+                   </mat-select>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext (click)="loadTables()">Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+                  <ng-template matStepLabel>Set Source Table</ng-template>
+                  <mat-form-field>
+                     <mat-select placeholder="Kaynak Tablo Listesi" formControlName="sourceTableSelect">
+                        <mat-option *ngFor="let dataTable of dataTables" [value]="dataTable.name">
+                            {{dataTable.name}}
+                        </mat-option>
+                     </mat-select>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext (click)="loadColumns()">Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="columnListFormGroup">
+                <form [formGroup]="columnListFormGroup">
+                    <ng-template matStepLabel>Set Source Columns</ng-template>
+                    <mat-form-field>
+                       <mat-select placeholder="Kaynak Kolon Listesi" formControlName="sourceColumnSelect">
+                          <mat-option *ngFor="let dataColumn of dataColumns" [value]="dataColumn.name">
+                              {{dataColumn.name}}
+                          </mat-option>
+                       </mat-select>
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext (click)="loadColumnsToTable()">Next</button>
+                  </div>
+                </form>
+              </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+        
+    
+    </div>
+    
+
+    <div>
+
+        <nb-card>
+            <nb-card-header>
+              Smart Table
+            </nb-card-header>
+          
+            <nb-card-body>
+              <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+              </ng2-smart-table>
+            </nb-card-body>
+        </nb-card>
+
+    </div>
+
+<!--     <div>
+
+        <nb-card>
+            <nb-card-header>
+              Smart Table
+            </nb-card-header>
+          
+            <nb-card-body>
+              <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+              </ng2-smart-table>
+            </nb-card-body>
+        </nb-card>
+
+    </div> -->
+    
