@@ -1,0 +1,24 @@
+{
+    "bilgeApp": {
+        "sparkDatasetColumn" : {
+            "home": {
+                "title": "Spark Dataset Columns",
+                "createLabel": "Create a new Spark Dataset Column",
+                "createOrEditLabel": "Create or edit a Spark Dataset Column"
+            },
+            "created": "A new Spark Dataset Column is created with identifier {{ param }}",
+            "updated": "A Spark Dataset Column is updated with identifier {{ param }}",
+            "deleted": "A Spark Dataset Column is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Spark Dataset Column {{ id }}?"
+            },
+            "detail": {
+                "title": "Spark Dataset Column"
+            },
+            "name": "Name",
+            "type": "Type",
+            "desc": "Desc",
+            "parentDataset": "Parent Dataset"
+        }
+    }
+}

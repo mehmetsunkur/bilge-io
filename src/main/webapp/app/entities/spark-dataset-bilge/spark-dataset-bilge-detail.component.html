@@ -1,0 +1,34 @@
+
+<div *ngIf="sparkDataset">
+    <h2><span jhiTranslate="bilgeApp.sparkDataset.detail.title">Spark Dataset</span> {{sparkDataset.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.sparkDataset.module">Module</span></dt>
+        <dd>
+            <span>{{sparkDataset.module}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDataset.name">Name</span></dt>
+        <dd>
+            <span>{{sparkDataset.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDataset.desc">Desc</span></dt>
+        <dd>
+            <span>{{sparkDataset.desc}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'spark-dataset-bilge/'+ sparkDataset.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

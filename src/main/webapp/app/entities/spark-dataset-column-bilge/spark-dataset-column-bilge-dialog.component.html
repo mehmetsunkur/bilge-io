@@ -1,0 +1,90 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySparkDatasetColumnLabel" jhiTranslate="bilgeApp.sparkDatasetColumn.home.createOrEditLabel">Create or edit a Spark Dataset Column</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!sparkDatasetColumn.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="sparkDatasetColumn.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="bilgeApp.sparkDatasetColumn.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="sparkDatasetColumn.name" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="bilgeApp.sparkDatasetColumn.type" for="field_type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="sparkDatasetColumn.type" id="field_type" >
+                <option value="CHAR">{{'bilgeApp.ColumnType.CHAR' | translate}}</option>
+                <option value="VARCHAR">{{'bilgeApp.ColumnType.VARCHAR' | translate}}</option>
+                <option value="LONGVARCHAR">{{'bilgeApp.ColumnType.LONGVARCHAR' | translate}}</option>
+                <option value="CLOB">{{'bilgeApp.ColumnType.CLOB' | translate}}</option>
+                <option value="NCHAR">{{'bilgeApp.ColumnType.NCHAR' | translate}}</option>
+                <option value="NVARCHAR">{{'bilgeApp.ColumnType.NVARCHAR' | translate}}</option>
+                <option value="LONGNVARCHAR">{{'bilgeApp.ColumnType.LONGNVARCHAR' | translate}}</option>
+                <option value="NCLOB">{{'bilgeApp.ColumnType.NCLOB' | translate}}</option>
+                <option value="TINYINT">{{'bilgeApp.ColumnType.TINYINT' | translate}}</option>
+                <option value="SMALLINT">{{'bilgeApp.ColumnType.SMALLINT' | translate}}</option>
+                <option value="INTEGER">{{'bilgeApp.ColumnType.INTEGER' | translate}}</option>
+                <option value="BIGINT">{{'bilgeApp.ColumnType.BIGINT' | translate}}</option>
+                <option value="FLOAT">{{'bilgeApp.ColumnType.FLOAT' | translate}}</option>
+                <option value="REAL">{{'bilgeApp.ColumnType.REAL' | translate}}</option>
+                <option value="DOUBLE">{{'bilgeApp.ColumnType.DOUBLE' | translate}}</option>
+                <option value="NUMERIC">{{'bilgeApp.ColumnType.NUMERIC' | translate}}</option>
+                <option value="DECIMAL">{{'bilgeApp.ColumnType.DECIMAL' | translate}}</option>
+                <option value="UUID">{{'bilgeApp.ColumnType.UUID' | translate}}</option>
+                <option value="DATE">{{'bilgeApp.ColumnType.DATE' | translate}}</option>
+                <option value="TIME">{{'bilgeApp.ColumnType.TIME' | translate}}</option>
+                <option value="TIMESTAMP">{{'bilgeApp.ColumnType.TIMESTAMP' | translate}}</option>
+                <option value="BIT">{{'bilgeApp.ColumnType.BIT' | translate}}</option>
+                <option value="BOOLEAN">{{'bilgeApp.ColumnType.BOOLEAN' | translate}}</option>
+                <option value="BINARY">{{'bilgeApp.ColumnType.BINARY' | translate}}</option>
+                <option value="VARBINARY">{{'bilgeApp.ColumnType.VARBINARY' | translate}}</option>
+                <option value="LONGVARBINARY">{{'bilgeApp.ColumnType.LONGVARBINARY' | translate}}</option>
+                <option value="BLOB">{{'bilgeApp.ColumnType.BLOB' | translate}}</option>
+                <option value="NULL">{{'bilgeApp.ColumnType.NULL' | translate}}</option>
+                <option value="OTHER">{{'bilgeApp.ColumnType.OTHER' | translate}}</option>
+                <option value="JAVA_OBJECT">{{'bilgeApp.ColumnType.JAVA_OBJECT' | translate}}</option>
+                <option value="DISTINCT">{{'bilgeApp.ColumnType.DISTINCT' | translate}}</option>
+                <option value="STRUCT">{{'bilgeApp.ColumnType.STRUCT' | translate}}</option>
+                <option value="ARRAY">{{'bilgeApp.ColumnType.ARRAY' | translate}}</option>
+                <option value="REF">{{'bilgeApp.ColumnType.REF' | translate}}</option>
+                <option value="DATALINK">{{'bilgeApp.ColumnType.DATALINK' | translate}}</option>
+                <option value="ROWID">{{'bilgeApp.ColumnType.ROWID' | translate}}</option>
+                <option value="SQLXML">{{'bilgeApp.ColumnType.SQLXML' | translate}}</option>
+                <option value="INET">{{'bilgeApp.ColumnType.INET' | translate}}</option>
+                <option value="LIST">{{'bilgeApp.ColumnType.LIST' | translate}}</option>
+                <option value="MAP">{{'bilgeApp.ColumnType.MAP' | translate}}</option>
+                <option value="SET">{{'bilgeApp.ColumnType.SET' | translate}}</option>
+                <option value="STRING">{{'bilgeApp.ColumnType.STRING' | translate}}</option>
+                <option value="NUMBER">{{'bilgeApp.ColumnType.NUMBER' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="bilgeApp.sparkDatasetColumn.desc" for="field_desc">Desc</label>
+            <input type="text" class="form-control" name="desc" id="field_desc"
+                [(ngModel)]="sparkDatasetColumn.desc" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="bilgeApp.sparkDatasetColumn.parentDataset" for="field_parentDataset">Parent Dataset</label>
+            <select class="form-control" id="field_parentDataset" name="parentDataset" [(ngModel)]="sparkDatasetColumn.parentDatasetId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sparkDatasetOption.id" *ngFor="let sparkDatasetOption of sparkdatasets; trackBy: trackSparkDatasetById">{{sparkDatasetOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -14,6 +14,8 @@
                 "dataColumnBilge": "Data Column",
                 "sparkDestinationTableBilge": "Spark Destination Table",
                 "sparkDestinationColumnBilge": "Spark Destination Column",
+                "sparkDatasetBilge": "Spark Dataset",
+                "sparkDatasetColumnBilge": "Spark Dataset Column",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

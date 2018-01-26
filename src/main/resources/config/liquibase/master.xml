@@ -10,13 +10,13 @@
     <include file="config/liquibase/changelog/20180121115757_added_entity_DataSchema.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180121115758_added_entity_DataTable.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180121115759_added_entity_DataColumn.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20180123100008_added_entity_SparkDestinationTable.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20180123100009_added_entity_SparkDestinationColumn.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180126171358_added_entity_SparkDataset.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180126171359_added_entity_SparkDatasetColumn.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20180121115756_added_entity_constraints_DataContext.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180121115757_added_entity_constraints_DataSchema.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180121115758_added_entity_constraints_DataTable.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180121115759_added_entity_constraints_DataColumn.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20180123100009_added_entity_constraints_SparkDestinationColumn.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180126171359_added_entity_constraints_SparkDatasetColumn.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

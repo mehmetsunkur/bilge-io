@@ -54,19 +54,20 @@ enum ColumnType {
     LIST,MAP,SET,STRING,NUMBER
 }
 
-entity SparkDestinationTable {
+entity SparkDataset {
+	module String,
 	name String,
     desc String
 }
 
-entity SparkDestinationColumn {
+entity SparkDatasetColumn {
 	name String,
-    type String,
+    type ColumnType,
     desc String
 }
 
 relationship OneToMany {
-	SparkDestinationTable {columns(name)} to SparkDestinationColumn {parentTable(name)}
+	SparkDataset {columns(name)} to SparkDatasetColumn {parentDataset(name)}
 }
 
 dto * with mapstruct

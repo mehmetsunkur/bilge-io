@@ -1,0 +1,40 @@
+
+<div *ngIf="sparkDatasetColumn">
+    <h2><span jhiTranslate="bilgeApp.sparkDatasetColumn.detail.title">Spark Dataset Column</span> {{sparkDatasetColumn.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bilgeApp.sparkDatasetColumn.name">Name</span></dt>
+        <dd>
+            <span>{{sparkDatasetColumn.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDatasetColumn.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'bilgeApp.ColumnType.' + sparkDatasetColumn.type}}">{{sparkDatasetColumn.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDatasetColumn.desc">Desc</span></dt>
+        <dd>
+            <span>{{sparkDatasetColumn.desc}}</span>
+        </dd>
+        <dt><span jhiTranslate="bilgeApp.sparkDatasetColumn.parentDataset">Parent Dataset</span></dt>
+        <dd>
+            <div *ngIf="sparkDatasetColumn.parentDatasetId">
+                <a [routerLink]="['/spark-dataset-bilge', sparkDatasetColumn.parentDatasetId]">{{sparkDatasetColumn.parentDatasetName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'spark-dataset-column-bilge/'+ sparkDatasetColumn.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

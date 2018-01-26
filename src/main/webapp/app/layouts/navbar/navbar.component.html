@@ -71,6 +71,18 @@
                             <span jhiTranslate="global.menu.entities.sparkDestinationColumnBilge">Spark Destination Column Bilge</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="spark-dataset-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.sparkDatasetBilge">Spark Dataset Bilge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="spark-dataset-column-bilge" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.sparkDatasetColumnBilge">Spark Dataset Column Bilge</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

@@ -15,10 +15,10 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity SparkDestinationColumn.
+        Added the entity SparkDatasetColumn.
     -->
-    <changeSet id="20180123100009-1" author="jhipster">
-        <createTable tableName="spark_destination_column">
+    <changeSet id="20180126171359-1" author="jhipster">
+        <createTable tableName="spark_dataset_column">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -34,7 +34,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="parent_table_id" type="bigint">
+            <column name="parent_dataset_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

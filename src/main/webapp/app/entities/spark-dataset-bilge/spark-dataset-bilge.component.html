@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="bilgeApp.sparkDataset.home.title">Spark Datasets</span>
+        <button class="btn btn-primary float-right jh-create-entity create-spark-dataset-bilge" [routerLink]="['/', { outlets: { popup: ['spark-dataset-bilge-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="bilgeApp.sparkDataset.home.createLabel">
+            Create new Spark Dataset
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sparkDatasets">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="bilgeApp.sparkDataset.module">Module</span></th>
+            <th><span jhiTranslate="bilgeApp.sparkDataset.name">Name</span></th>
+            <th><span jhiTranslate="bilgeApp.sparkDataset.desc">Desc</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sparkDataset of sparkDatasets ;trackBy: trackId">
+                <td><a [routerLink]="['../spark-dataset-bilge', sparkDataset.id ]">{{sparkDataset.id}}</a></td>
+                <td>{{sparkDataset.module}}</td>
+                <td>{{sparkDataset.name}}</td>
+                <td>{{sparkDataset.desc}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../spark-dataset-bilge', sparkDataset.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'spark-dataset-bilge/'+ sparkDataset.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'spark-dataset-bilge/'+ sparkDataset.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

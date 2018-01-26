@@ -1,0 +1,24 @@
+{
+    "bilgeApp": {
+        "sparkDataset" : {
+            "home": {
+                "title": "Spark Datasets",
+                "createLabel": "Create a new Spark Dataset",
+                "createOrEditLabel": "Create or edit a Spark Dataset"
+            },
+            "created": "A new Spark Dataset is created with identifier {{ param }}",
+            "updated": "A Spark Dataset is updated with identifier {{ param }}",
+            "deleted": "A Spark Dataset is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Spark Dataset {{ id }}?"
+            },
+            "detail": {
+                "title": "Spark Dataset"
+            },
+            "module": "Module",
+            "name": "Name",
+            "desc": "Desc",
+            "columns": "Columns"
+        }
+    }
+}
