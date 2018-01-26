@@ -13,6 +13,11 @@ const routes: Routes = [{
       loadChildren: () => new Promise(resolve => {
         (require as any).ensure([], require => { resolve(require('./entities/entity.module').BilgeEntityModule); })
       })
+    },{
+      path: 'test',
+      loadChildren: () => new Promise(resolve => {
+        (require as any).ensure([], require => { resolve(require('./test/test-bilge.module').TestBilgeModule); })
+      })
     }, {
       path: 'dashboard',
       component: DashboardComponent,

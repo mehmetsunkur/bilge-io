@@ -178,4 +178,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Test',
+    icon: 'nb-cloudy',
+    children: [
+      {
+        title: 'stepper',
+        link: '/pages/test/test-stepper-bilge',
+      }
+    ],
+  },
 ];
